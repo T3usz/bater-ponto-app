@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro Facial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <!-- Status e Mensagens -->
+    <ion-card>
+      <ion-card-content>
+        <div class="status-container">
+          <ion-spinner *ngIf="carregando" name="crescent"></ion-spinner>
+          <p [class]="rostoDetectado ? 'text-success' : 'text-primary'">{{ mensagem }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Captura de Foto -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Foto para Cadastro Facial</ion-card-title>
+        <ion-card-subtitle>Capture uma foto clara do seu rosto</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="foto-container">
+          <div *ngIf="!foto" class="foto-placeholder">
+            <ion-icon name="person" size="large"></ion-icon>
+            <p>Nenhuma foto capturada</p>
+          </div>
+          <div *ngIf="foto" class="foto-preview-container">
+            <img [src]="foto" alt="Foto capturada" class="foto-preview">
+            <div *ngIf="rostoDetectado" class="detection-overlay">
+              <ion-icon name="checkmark-circle" color="success"></ion-icon>
+              <span>Rosto Detectado</span>
+            </div>
+          </div>
+        </div>
+        
+        <ion-button expand="block" 
+                    fill="outline" 
+                    (click)="capturarFoto()"
+                    [disabled]="carregando">
+          <ion-icon name="camera" slot="start"></ion-icon>
+          {{ foto ? 'Capturar Nova Foto' : 'Capturar Foto' }}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Instruções -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Instruções</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="sunny" slot="start" color="warning"></ion-icon>
+            <ion-label>
+              <p>Use boa iluminação</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="person" slot="start" color="primary"></ion-icon>
+            <ion-label>
+              <p>Olhe diretamente para a câmera</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="eye" slot="start" color="success"></ion-icon>
+            <ion-label>
+              <p>Mantenha o rosto visível</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Botões de Ação -->
+    <div class="action-buttons">
+      <ion-button expand="block" 
+                  color="success" 
+                  (click)="salvarCadastro()"
+                  [disabled]="!rostoDetectado || carregando">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Salvar Cadastro Facial
+      </ion-button>
+      
+      <ion-button expand="block" 
+                  fill="outline" 
+                  color="medium"
+                  (click)="limparCadastro()"
+                  [disabled]="carregando">
+        <ion-icon name="refresh" slot="start"></ion-icon>
+        Limpar e Recomeçar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

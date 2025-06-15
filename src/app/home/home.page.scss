@@ -1,0 +1,64 @@
+.container {
+  padding: 16px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-details h2 {
+  margin: 0 0 8px 0;
+  color: var(--ion-color-primary);
+}
+
+.user-details p {
+  margin: 4px 0;
+  color: var(--ion-color-medium);
+}
+
+.banco-horas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saldo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--ion-color-light);
+}
+
+.saldo-item ion-icon {
+  font-size: 24px;
+}
+
+.saldo-item span {
+  font-weight: 500;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-buttons ion-button {
+  margin: 0;
+  text-align: left;
+  justify-content: flex-start;
+}
+

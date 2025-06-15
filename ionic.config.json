@@ -1,0 +1,7 @@
+{
+  "name": "bater-ponto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,223 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.ionic.starter"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:14:5-67
+11-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:14:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:15:5-65
+12-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:15:22-62
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:16:5-79
+13-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:16:22-76
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:17:5-81
+14-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:17:22-78
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:18:5-81
+15-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:18:22-78
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:19:5-80
+16-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:19:22-77
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:20:5-79
+17-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:20:22-76
+18
+19    <uses-feature
+19-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:21:5-84
+20        android:name="android.hardware.camera"
+20-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:21:19-57
+21        android:required="true" />
+21-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:21:58-81
+22    <uses-feature
+22-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:22:5-86
+23        android:name="android.hardware.location"
+23-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:22:19-59
+24        android:required="true" />
+24-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:22:60-83
+25    <uses-feature
+25-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:23:5-90
+26        android:name="android.hardware.location.gps"
+26-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:23:19-63
+27        android:required="true" />
+27-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:23:64-87
+28
+29    <queries>
+29-->[:capacitor-camera] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-11:15
+30        <intent>
+30-->[:capacitor-camera] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:9-10:18
+31            <action android:name="android.media.action.IMAGE_CAPTURE" />
+31-->[:capacitor-camera] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:13-73
+31-->[:capacitor-camera] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:21-70
+32        </intent>
+33    </queries>
+34
+35    <uses-permission android:name="android.permission.VIBRATE" />
+35-->[:capacitor-haptics] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-66
+35-->[:capacitor-haptics] C:\Users\Mateus\bater-ponto\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:22-63
+36
+37    <permission
+37-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+38        android:name="io.ionic.starter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+38-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+39        android:protectionLevel="signature" />
+39-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+40
+41    <uses-permission android:name="io.ionic.starter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+41-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+41-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+42
+43    <application
+43-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:5-13:19
+44        android:allowBackup="true"
+44-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:18-44
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.15.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\5f51ed623ec66baebfa6a053fe8a8b2a\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+46        android:debuggable="true"
+47        android:extractNativeLibs="false"
+48        android:icon="@mipmap/ic_launcher"
+48-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:45-79
+49        android:label="@string/app_name"
+49-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:80-112
+50        android:roundIcon="@mipmap/ic_launcher_round"
+50-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:113-158
+51        android:supportsRtl="true"
+51-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:159-185
+52        android:theme="@style/AppTheme"
+52-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:186-217
+53        android:usesCleartextTraffic="true" >
+53-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:3:218-253
+54        <activity
+54-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:9-9:20
+55            android:name="io.ionic.starter.MainActivity"
+55-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:247-275
+56            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation"
+56-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:19-146
+57            android:exported="true"
+57-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:147-170
+58            android:label="@string/title_activity_main"
+58-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:171-214
+59            android:launchMode="singleTask"
+59-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:215-246
+60            android:theme="@style/AppTheme.NoActionBarLaunch" >
+60-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:4:276-325
+61            <intent-filter>
+61-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:5:13-8:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:6:17-69
+62-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:6:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:7:17-77
+64-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:7:27-74
+65            </intent-filter>
+66        </activity>
+67
+68        <provider
+69            android:name="androidx.core.content.FileProvider"
+69-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:10:131-180
+70            android:authorities="io.ionic.starter.fileprovider"
+70-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:10:19-70
+71            android:exported="false"
+71-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:10:71-95
+72            android:grantUriPermissions="true" >
+72-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:10:96-130
+73            <meta-data
+73-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:11:13-112
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:11:24-74
+75                android:resource="@xml/file_paths" />
+75-->C:\Users\Mateus\bater-ponto\android\app\src\main\AndroidManifest.xml:11:75-109
+76        </provider>
+77
+78        <activity
+78-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\3897ee7a3a7e64eb47ff9b7bb8256b24\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+79-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\3897ee7a3a7e64eb47ff9b7bb8256b24\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+80            android:exported="false"
+80-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\3897ee7a3a7e64eb47ff9b7bb8256b24\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+81-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\3897ee7a3a7e64eb47ff9b7bb8256b24\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+82
+83        <provider
+83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+84            android:name="androidx.startup.InitializationProvider"
+84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+85            android:authorities="io.ionic.starter.androidx-startup"
+85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+86            android:exported="false" >
+86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+87            <meta-data
+87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+89                android:value="androidx.startup" />
+89-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\455628e39230ce08b70f281b4ac99c3c\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+90            <meta-data
+90-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\2086035d7e747a32c2be40e6ed7f404e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+91-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\2086035d7e747a32c2be40e6ed7f404e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+92                android:value="androidx.startup" />
+92-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\2086035d7e747a32c2be40e6ed7f404e\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+93            <meta-data
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+94                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+95                android:value="androidx.startup" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+96        </provider>
+97
+98        <meta-data
+98-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\697a983ff8b6be23efe7df3e3bbc5a94\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+99            android:name="com.google.android.gms.version"
+99-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\697a983ff8b6be23efe7df3e3bbc5a94\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+100            android:value="@integer/google_play_services_version" />
+100-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\697a983ff8b6be23efe7df3e3bbc5a94\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+101
+102        <receiver
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+103            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+104            android:directBootAware="false"
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+105            android:enabled="true"
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+106            android:exported="true"
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+107            android:permission="android.permission.DUMP" >
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+108            <intent-filter>
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+109                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+110            </intent-filter>
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+112                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+113            </intent-filter>
+114            <intent-filter>
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+115                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+116            </intent-filter>
+117            <intent-filter>
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+118                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Mateus\.gradle\caches\8.11.1\transforms\0f3d68271fd414f74f11a6a9c308b287\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+119            </intent-filter>
+120        </receiver>
+121    </application>
+122
+123</manifest>

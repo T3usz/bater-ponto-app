@@ -1,0 +1,65 @@
+.container {
+  padding: 16px;
+}
+
+.status-gps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.status-gps ion-icon {
+  font-size: 24px;
+}
+
+.text-success {
+  color: var(--ion-color-success);
+  font-weight: 500;
+}
+
+.text-danger {
+  color: var(--ion-color-danger);
+  font-weight: 500;
+}
+
+.localizacao-info {
+  background: var(--ion-color-light);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.localizacao-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.foto-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.foto-placeholder {
+  padding: 40px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  color: var(--ion-color-medium);
+}
+
+.foto-placeholder ion-icon {
+  margin-bottom: 8px;
+}
+
+.foto-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.registro-button {
+  margin-top: 24px;
+  padding: 0 16px 16px;
+}
+

@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ponto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ponto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <!-- Registrar Ponto -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Registrar Ponto</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" color="primary" (click)="registrarPonto()">
+          <ion-icon name="time" slot="start"></ion-icon>
+          Bater Ponto Agora
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Últimas Batidas -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Últimas Batidas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h3>Entrada</h3>
+              <p>Hoje - 08:00</p>
+            </ion-label>
+            <ion-badge color="success">Registrado</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Saída Almoço</h3>
+              <p>Hoje - 12:00</p>
+            </ion-label>
+            <ion-badge color="success">Registrado</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Volta Almoço</h3>
+              <p>Hoje - 13:00</p>
+            </ion-label>
+            <ion-badge color="warning">Pendente</ion-badge>
+          </ion-item>
+        </ion-list>
+        
+        <ion-button expand="block" fill="outline" (click)="verBatidas()">
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          Ver Todas as Batidas
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bater Ponto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <!-- Seção do Usuário -->
+    <ion-card>
+      <ion-card-content>
+        <div class="user-info">
+          <ion-avatar class="user-avatar">
+            <img [src]="usuario.foto" alt="Foto do usuário">
+          </ion-avatar>
+          <div class="user-details">
+            <h2>Olá, {{ usuario.nome }}!</h2>
+            <p>Matrícula: {{ usuario.matricula }}</p>
+            <p>Cargo: {{ usuario.cargo }}</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Saldo Banco de Horas -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Banco de Horas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="banco-horas">
+          <div class="saldo-item credito">
+            <ion-icon name="add-circle" color="success"></ion-icon>
+            <span>Crédito: {{ saldoBancoHoras.credito }}h</span>
+          </div>
+          <div class="saldo-item debito">
+            <ion-icon name="remove-circle" color="danger"></ion-icon>
+            <span>Débito: {{ saldoBancoHoras.debito }}h</span>
+          </div>
+          <div class="saldo-item saldo">
+            <ion-icon name="time" color="primary"></ion-icon>
+            <span>Saldo: {{ saldoBancoHoras.saldo }}h</span>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Menu de Navegação -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Menu</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="menu-buttons">
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/batidas-do-mes')">
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            Batidas do Mês
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/registrar-ponto')">
+            <ion-icon name="time" slot="start"></ion-icon>
+            Registrar Ponto
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/folha-do-mes')">
+            <ion-icon name="document-text" slot="start"></ion-icon>
+            Folha do Mês
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/qr-batida')">
+            <ion-icon name="qr-code" slot="start"></ion-icon>
+            QR Batida
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/dados-pessoais')">
+            <ion-icon name="person" slot="start"></ion-icon>
+            Dados Pessoais
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="navegarPara('/termos-condicoes')">
+            <ion-icon name="document" slot="start"></ion-icon>
+            Termos e Condições
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

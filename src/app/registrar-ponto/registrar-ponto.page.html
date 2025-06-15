@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Ponto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <!-- Status do GPS -->
+    <ion-card>
+      <ion-card-content>
+        <div class="status-gps">
+          <ion-icon [name]="gpsAtivo ? 'location' : 'location-outline'" 
+                    [color]="gpsAtivo ? 'success' : 'danger'"></ion-icon>
+          <span [class]="gpsAtivo ? 'text-success' : 'text-danger'">
+            {{ gpsAtivo ? 'GPS Ativo' : 'GPS Inativo' }}
+          </span>
+        </div>
+        <div *ngIf="localizacao" class="localizacao-info">
+          <p><strong>Latitude:</strong> {{ localizacao.latitude | number:'1.6-6' }}</p>
+          <p><strong>Longitude:</strong> {{ localizacao.longitude | number:'1.6-6' }}</p>
+          <p><strong>Precisão:</strong> {{ localizacao.precisao | number:'1.0-0' }}m</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Captura de Foto -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Foto para Reconhecimento</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="foto-container">
+          <div *ngIf="!foto" class="foto-placeholder">
+            <ion-icon name="camera" size="large"></ion-icon>
+            <p>Nenhuma foto capturada</p>
+          </div>
+          <img *ngIf="foto" [src]="foto" alt="Foto capturada" class="foto-preview">
+        </div>
+        
+        <ion-button expand="block" fill="outline" (click)="capturarFoto()">
+          <ion-icon name="camera" slot="start"></ion-icon>
+          {{ foto ? 'Capturar Nova Foto' : 'Capturar Foto' }}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Informações do Registro -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Informações do Registro</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h3>Data e Hora</h3>
+              <p>{{ dataHoraAtual | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Tipo de Registro</h3>
+              <p>{{ getTipoRegistroTexto() }}</p>
+            </ion-label>
+            <ion-badge [color]="reconhecimentoFacial ? 'success' : 'medium'" slot="end">
+              {{ reconhecimentoFacial ? 'Rosto Reconhecido' : 'Aguardando Foto' }}
+            </ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Botão de Registro -->
+    <div class="registro-button">
+      <ion-button expand="block" 
+                  color="primary" 
+                  size="large"
+                  (click)="registrarPonto()"
+                  [disabled]="carregando || !foto || !gpsAtivo">
+        <ion-icon name="time" slot="start"></ion-icon>
+        <span *ngIf="!carregando">Registrar Ponto</span>
+        <span *ngIf="carregando">Registrando...</span>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

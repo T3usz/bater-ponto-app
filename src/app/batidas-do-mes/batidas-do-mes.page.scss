@@ -1,0 +1,82 @@
+.container {
+  padding: 16px;
+}
+
+.estatisticas {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.estatistica-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.registro-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.registro-info {
+  flex: 1;
+}
+
+.registro-info h3 {
+  margin: 0 0 8px 0;
+  color: var(--ion-color-primary);
+}
+
+.data-hora {
+  margin: 4px 0;
+  color: var(--ion-color-medium);
+  font-size: 14px;
+}
+
+.localizacao {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ion-color-medium);
+}
+
+.status-sincronizacao {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.registro-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.sem-registros {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.sem-registros ion-icon {
+  margin-bottom: 16px;
+}
+
+.sem-registros h3 {
+  color: var(--ion-color-medium);
+  margin-bottom: 8px;
+}
+
+.sem-registros p {
+  color: var(--ion-color-medium);
+  margin-bottom: 24px;
+}
+
