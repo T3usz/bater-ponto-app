@@ -1,5 +1,23 @@
+// Estilo do Content
+ion-content {
+  --background: var(--ion-color-light);
+}
+
 .container {
-  padding: 16px;
+  padding: 20px 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+// Card do Usuário
+.user-card {
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  
+  ion-card-content {
+    padding: 16px;
+  }
 }
 
 .user-info {
@@ -8,57 +26,220 @@
   gap: 16px;
 }
 
+.user-avatar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user-avatar {
   width: 80px;
   height: 80px;
+  
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    background: var(--ion-color-primary);
+  }
+}
+
+.change-photo-btn {
+  position: absolute;
+  bottom: -12px;
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  height: auto;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: none;
 }
 
 .user-details {
   flex: 1;
+  
+  h2 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: var(--ion-color-dark);
+    font-weight: 500;
+  }
+  
+  .user-name {
+    color: var(--ion-color-primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .user-role {
+    color: var(--ion-color-medium);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 }
 
-.user-details h2 {
-  margin: 0 0 8px 0;
-  color: var(--ion-color-primary);
+// Card Banco de Horas
+.bank-hours-card {
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  
+  ion-card-content {
+    padding: 16px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: var(--ion-color-dark);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+  }
 }
 
-.user-details p {
-  margin: 4px 0;
+.registration-number {
   color: var(--ion-color-medium);
+  font-size: 14px;
+  margin-bottom: 24px;
 }
 
-.banco-horas {
+.hours-circle {
+  width: 140px;
+  height: 140px;
+  border: 6px solid var(--ion-color-danger);
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.saldo-item {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px;
-  border-radius: 8px;
+  justify-content: center;
+  margin: 0 auto 16px;
   background: var(--ion-color-light);
 }
 
-.saldo-item ion-icon {
-  font-size: 24px;
+.debt-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ion-color-dark);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
 }
 
-.saldo-item span {
-  font-weight: 500;
+.hours-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--ion-color-dark);
+  line-height: 1;
 }
 
-.menu-buttons {
+.minutes-value {
+  font-size: 16px;
+  color: var(--ion-color-medium);
+  margin-top: -4px;
+}
+
+.bank-validity {
+  color: var(--ion-color-medium);
+  font-size: 12px;
+}
+
+// Menu Grid
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.menu-item {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  
+  height: auto;
+  margin: 0;
+}
+
+.menu-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  width: 100%;
 }
 
-.menu-buttons ion-button {
-  margin: 0;
-  text-align: left;
-  justify-content: flex-start;
+.menu-icon {
+  font-size: 32px;
+  color: var(--ion-color-primary);
+  margin-bottom: 12px;
 }
 
+.menu-text {
+  font-size: 12px;
+  color: var(--ion-color-dark);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+// Responsividade
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+  }
+  
+  .user-card ion-card-content,
+  .bank-hours-card ion-card-content {
+    padding: 16px;
+  }
+  
+  .menu-grid {
+    gap: 12px;
+  }
+  
+  .menu-item {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .menu-text {
+    font-size: 11px;
+  }
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.15em;
+  line-height: 1.1; /* aproxima as linhas */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #444;
+  margin-top: 2px;
+  margin-left: 1px;
+  letter-spacing: 0.2px;
+}

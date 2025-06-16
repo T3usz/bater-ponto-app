@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Dados Pessoais</ion-title>
+    <ion-title>Termos e Condições</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,50 +11,48 @@
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Informações Pessoais</ion-card-title>
+        <ion-card-title>Termos e Condições de Uso</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-list>
+        <ion-list lines="none">
           <ion-item>
             <ion-label>
-              <h3>Nome Completo</h3>
-              <p>{{ usuario.nome }}</p>
+              <h3>1. Aceitação dos Termos</h3>
+              <p>
+                Ao utilizar este aplicativo, você concorda com os presentes Termos e Condições de Uso. Leia atentamente antes de prosseguir.
+              </p>
             </ion-label>
           </ion-item>
           <ion-item>
             <ion-label>
-              <h3>Email</h3>
-              <p>{{ usuario.email }}</p>
+              <h3>2. Privacidade e Proteção de Dados</h3>
+              <p>
+                Seus dados pessoais são coletados e utilizados apenas para fins de funcionamento e aprimoramento do aplicativo, conforme nossa Política de Privacidade.
+              </p>
             </ion-label>
           </ion-item>
           <ion-item>
             <ion-label>
-              <h3>Telefone</h3>
-              <p>{{ usuario.telefone }}</p>
+              <h3>3. Responsabilidades do Usuário</h3>
+              <p>
+                O usuário se compromete a fornecer informações verdadeiras, manter a confidencialidade de suas credenciais e utilizar o aplicativo de forma ética e responsável.
+              </p>
             </ion-label>
           </ion-item>
           <ion-item>
             <ion-label>
-              <h3>Matrícula</h3>
-              <p>{{ usuario.matricula }}</p>
+              <h3>4. Alterações nos Termos</h3>
+              <p>
+                Estes termos poderão ser atualizados a qualquer momento, visando o melhor funcionamento do serviço. Recomendamos a consulta periódica desta seção.
+              </p>
             </ion-label>
           </ion-item>
           <ion-item>
             <ion-label>
-              <h3>Cargo</h3>
-              <p>{{ usuario.cargo }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Departamento</h3>
-              <p>{{ usuario.departamento }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Data de Admissão</h3>
-              <p>{{ usuario.dataAdmissao | date:'dd/MM/yyyy' }}</p>
+              <h3>5. Contato</h3>
+              <p>
+                Em caso de dúvidas ou solicitações, entre em contato com o suporte do aplicativo.
+              </p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -62,4 +60,3 @@
     </ion-card>
   </div>
 </ion-content>
-
