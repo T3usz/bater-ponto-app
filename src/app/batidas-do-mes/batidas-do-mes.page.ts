@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, ActionSheetController, Platform } from '@ionic/angular';
 import { OfflineStorageService, RegistroPonto } from '../services/offline-storage.service';
 import { PdfGeneratorService } from '../services/pdf-generator.service';
-import jsPDF from 'jspdf';
 
 interface RegistroDia {
   data: string;
@@ -212,38 +211,7 @@ export class BatidasDoMesPage implements OnInit {
         return;
       }
 
-      const doc = new jsPDF();
-      doc.setFontSize(16);
-      doc.text('Comprovante de Ponto do Dia', 20, 20);
-
-      doc.setFontSize(12);
-      doc.text(`Data: ${this.formatarData(registro.data)}`, 20, 35);
-      doc.text(`Dia da Semana: ${this.formatarDiaSemana(registro.data)}`, 20, 45);
-      doc.text(`Horas Trabalhadas: ${registro.horasTrabalhadas}`, 20, 55);
-
-      let y = 70;
-      registro.registrosOriginais.forEach((r, i) => {
-        const hora = new Date(r.dataHora).toLocaleTimeString('pt-BR');
-        const tipo = r.tipo;
-        const lat = r.localizacao.latitude.toFixed(6);
-        const lon = r.localizacao.longitude.toFixed(6);
-        const status = r.sincronizado ? 'Sincronizado' : 'Pendente';
-
-        doc.text(`Batida ${i + 1}: ${hora}`, 20, y);
-        doc.text(`Tipo: ${tipo} | Status: ${status}`, 20, y + 8);
-        doc.text(`Localização: ${lat}, ${lon}`, 20, y + 16);
-        y += 28;
-
-        if (y > 250) {
-          doc.addPage();
-          y = 20;
-        }
-      });
-
-      doc.setFontSize(10);
-      doc.text('Documento gerado automaticamente pelo sistema de ponto eletrônico.', 20, 280);
-
-      const blob = doc.output('blob');
+      const blob = await this.pdfGenerator.gerarComprovantePonto(registro.registrosOriginais);
       const nomeArquivo = `comprovante_${registro.data}.pdf`;
       await this.pdfGenerator.baixarPdf(blob, nomeArquivo);
 
