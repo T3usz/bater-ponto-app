@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true" keyboard-attach>
+  <div class="login-container">
+    <div class="login-card">
+      <img src="assets/logo-pontofacil.png" class="logo" />
+
+      <!-- CPF único com máscara -->
+      <ion-input
+        name="cpf"
+        label="CPF"
+        labelPlacement="stacked"
+        placeholder="000.000.000-00"
+        fill="outline"
+        type="tel"
+        inputmode="numeric"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        [(ngModel)]="cpf"
+        (ionInput)="cpf = formatarCPF(($event.target.value || '').toString())"
+      ></ion-input>
+
+      <!-- SENHA -->
+      <ion-input
+        name="senha"
+        label="Senha"
+        labelPlacement="stacked"
+        placeholder="8 caracteres"
+        fill="outline"
+        autocomplete="new-password"
+        autocorrect="off"
+        autocapitalize="off"
+        [type]="mostrarSenha ? 'text' : 'password'"
+        [(ngModel)]="senha"
+      >
+        <ion-buttons slot="end">
+          <ion-button fill="clear" size="small" (click)="alternarVisibilidadeSenha()">
+            <ion-icon
+              slot="icon-only"
+              [name]="mostrarSenha ? 'eye-off-outline' : 'eye-outline'">
+            </ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-input>
+
+      <!-- Checkbox lembrar CPF -->
+      <div class="lembrar-cpf">
+        <ion-checkbox [(ngModel)]="lembrarCPF" id="lembrarCpfCheck"></ion-checkbox>
+        <label for="lembrarCpfCheck">Lembrar CPF</label>
+      </div>
+
+      <!-- Botão de login -->
+      <ion-button expand="block" color="danger" (click)="fazerLogin()">Entrar</ion-button>
+
+      <!-- Links -->
+      <div class="login-links">
+        <a href="#">Esqueci a senha</a>
+        <a href="#">Solicitar primeiro acesso</a>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class HomePage implements OnInit {
-  
+
   @ViewChild('inputFoto', { static: false }) inputFoto!: ElementRef;
 
   usuario = {
@@ -29,7 +29,7 @@ export class HomePage implements OnInit {
     saldo: -238 // Calculado automaticamente
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertCtrl: AlertController) {}
 
   ngOnInit() {
     // Calcular saldo automaticamente
@@ -52,11 +52,10 @@ export class HomePage implements OnInit {
    */
   getInitials(nome: string): string {
     if (!nome) return '';
-    
     return nome
       .split(' ')
       .filter(part => part.length > 0)
-      .slice(0, 2) // Pega apenas os dois primeiros nomes
+      .slice(0, 2)
       .map(part => part.charAt(0).toUpperCase())
       .join('');
   }
@@ -122,5 +121,37 @@ export class HomePage implements OnInit {
    */
   getStatusText(): string {
     return this.isDebito() ? 'DÉBITO' : 'CRÉDITO';
+  }
+
+  /**
+   * Abre a tela de notificações
+   */
+  abrirNotificacoes() {
+    this.router.navigate(['/notificacoes']);
+  }
+
+  /**
+   * Exibe confirmação de logout e redireciona para tela inicial
+   */
+  async confirmarLogout() {
+    const alert = await this.alertCtrl.create({
+      header: 'Sair do sistema',
+      message: 'Deseja realmente sair?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Sair',
+          handler: () => {
+            localStorage.clear();
+            this.router.navigate(['/intro']);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

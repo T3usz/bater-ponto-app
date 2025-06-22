@@ -203,7 +203,7 @@ interface RegistroPonto {
 ---
 
 **Versão**: 1.0.0  
-**Data**: 15 de Janeiro de 2024  
+**Data**: 15 de Junho de 2025
 **Desenvolvedor**: Equipe de Desenvolvimento  
 **Status**: Pronto para uso e personalização
 

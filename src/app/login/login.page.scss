@@ -1,0 +1,88 @@
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+.login-container {
+  padding: 24px 16px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.login-card {
+  background: var(--ion-color-light);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 8px auto;
+}
+
+.senha-toggle-icon {
+  font-size: 20px;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--ion-color-medium);
+}
+
+ion-input {
+  --border-radius: 8px;
+  font-size: 15px;
+}
+
+ion-button {
+  height: 48px;
+  font-weight: 600;
+  --border-radius: 8px;
+  font-size: 15px;
+}
+
+.lembrar-cpf label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+
+.lembrar-cpf label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.login-links {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.login-links a {
+  color: var(--ion-color-primary);
+  text-decoration: none;
+  display: block;
+  margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px 16px;
+  }
+
+  .logo {
+    width: 72px;
+  }
+}

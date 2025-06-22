@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Avisos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="avisos-wrapper">
+    <ion-card *ngFor="let aviso of avisos" class="aviso-card">
+      <ion-card-content>
+        <div class="aviso-header">
+          <strong>{{ aviso.titulo }}</strong>
+          <span class="aviso-data">{{ aviso.data }}</span>
+        </div>
+        <p>{{ aviso.mensagem }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

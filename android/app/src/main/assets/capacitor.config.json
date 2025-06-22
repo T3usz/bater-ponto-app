@@ -3,8 +3,7 @@
 	"appName": "Bater Ponto",
 	"webDir": "www",
 	"server": {
-		"androidScheme": "https",
-		"url": "http://192.168.1.102:8101"
+		"androidScheme": "https"
 	},
 	"plugins": {
 		"Camera": {

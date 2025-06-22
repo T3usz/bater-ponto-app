@@ -33,7 +33,9 @@ export class OfflineStorageService {
   private inicializarArmazenamento(): void {
     // Verificar se já existe dados, senão inicializar
     if (!localStorage.getItem(this.STORAGE_KEYS.REGISTROS_PONTO)) {
-      localStorage.setItem(this.STORAGE_KEYS.REGISTROS_PONTO, JSON.stringify([]));
+      // Criar dados de demonstração
+      const dadosDemo = this.criarDadosDemonstracao();
+      localStorage.setItem(this.STORAGE_KEYS.REGISTROS_PONTO, JSON.stringify(dadosDemo));
     }
     
     if (!localStorage.getItem(this.STORAGE_KEYS.CONFIGURACOES)) {
@@ -45,6 +47,93 @@ export class OfflineStorageService {
       };
       localStorage.setItem(this.STORAGE_KEYS.CONFIGURACOES, JSON.stringify(configPadrao));
     }
+
+    if (!localStorage.getItem(this.STORAGE_KEYS.USUARIO)) {
+      const usuarioPadrao = {
+        nome: 'João Silva',
+        matricula: '12345',
+        cargo: 'Desenvolvedor',
+        foto: 'assets/images/user-placeholder.png'
+      };
+      localStorage.setItem(this.STORAGE_KEYS.USUARIO, JSON.stringify(usuarioPadrao));
+    }
+  }
+
+  private criarDadosDemonstracao(): RegistroPonto[] {
+    const hoje = new Date();
+    const ontem = new Date(hoje);
+    ontem.setDate(hoje.getDate() - 1);
+    
+    const anteontem = new Date(hoje);
+    anteontem.setDate(hoje.getDate() - 2);
+
+    return [
+      {
+        id: this.gerarId(),
+        dataHora: new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), 8, 0).toISOString(),
+        tipo: 'entrada',
+        foto: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+        localizacao: {
+          latitude: -23.5505,
+          longitude: -46.6333,
+          precisao: 10
+        },
+        sincronizado: true,
+        tentativasSincronizacao: 0
+      },
+      {
+        id: this.gerarId(),
+        dataHora: new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), 12, 0).toISOString(),
+        tipo: 'saida_almoco',
+        foto: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+        localizacao: {
+          latitude: -23.5505,
+          longitude: -46.6333,
+          precisao: 8
+        },
+        sincronizado: true,
+        tentativasSincronizacao: 0
+      },
+      {
+        id: this.gerarId(),
+        dataHora: new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), 13, 0).toISOString(),
+        tipo: 'volta_almoco',
+        foto: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+        localizacao: {
+          latitude: -23.5505,
+          longitude: -46.6333,
+          precisao: 12
+        },
+        sincronizado: false,
+        tentativasSincronizacao: 1
+      },
+      {
+        id: this.gerarId(),
+        dataHora: new Date(ontem.getFullYear(), ontem.getMonth(), ontem.getDate(), 8, 15).toISOString(),
+        tipo: 'entrada',
+        foto: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+        localizacao: {
+          latitude: -23.5505,
+          longitude: -46.6333,
+          precisao: 15
+        },
+        sincronizado: true,
+        tentativasSincronizacao: 0
+      },
+      {
+        id: this.gerarId(),
+        dataHora: new Date(ontem.getFullYear(), ontem.getMonth(), ontem.getDate(), 18, 0).toISOString(),
+        tipo: 'saida',
+        foto: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+        localizacao: {
+          latitude: -23.5505,
+          longitude: -46.6333,
+          precisao: 9
+        },
+        sincronizado: true,
+        tentativasSincronizacao: 0
+      }
+    ];
   }
 
   // Métodos para Registros de Ponto

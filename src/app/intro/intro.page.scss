@@ -1,0 +1,63 @@
+.intro-page {
+  --background: none;
+  background: url('/assets/intro-baterponto.jpg') no-repeat center center / cover;
+  text-align: center;
+}
+
+.intro-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 32px 24px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.intro-logo {
+  width: 72px;
+  margin-bottom: 12px;
+}
+
+.intro-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.intro-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.intro-btn {
+  width: 100%;
+  max-width: 300px;
+  height: 48px;
+  font-weight: bold;
+  font-size: 15px;
+  --border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.intro-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.demo-link,
+.admissao-label {
+  font-size: 14px;
+}
+
+ion-button[size="small"] {
+  height: 40px;
+  font-size: 14px;
+  --border-radius: 8px;
+  width: 100%;
+  max-width: 280px;
+}

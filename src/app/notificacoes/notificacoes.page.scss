@@ -1,0 +1,20 @@
+.avisos-wrapper {
+  padding: 12px;
+}
+
+.aviso-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.aviso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.aviso-data {
+  font-size: 0.75rem;
+  color: #666;
+}
