@@ -23,8 +23,9 @@ import {
   people,
   peopleOutline,
   personCircleOutline,
-  eyeOutline,           // 👁️ Adicionado
-  eyeOffOutline         // 👁️ Adicionado
+  eyeOutline,
+  eyeOffOutline,
+  receiptOutline // 🧾 Adicionado aqui
 } from 'ionicons/icons';
 
 import { routes } from './app/app.routes';
@@ -52,7 +53,8 @@ addIcons({
   'people-outline': peopleOutline,
   'person-circle-outline': personCircleOutline,
   'eye-outline': eyeOutline,
-  'eye-off-outline': eyeOffOutline 
+  'eye-off-outline': eyeOffOutline,
+  'receipt-outline': receiptOutline
 });
 
 bootstrapApplication(AppComponent, {

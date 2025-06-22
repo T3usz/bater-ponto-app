@@ -1,82 +1,238 @@
 .container {
   padding: 16px;
+  padding-bottom: 100px;
 }
 
-.estatisticas {
-  display: flex;
-  gap: 16px;
+// Filtro de mês
+.filter-card {
   margin-bottom: 16px;
+  
+  ion-item {
+    --background: transparent;
+    --border-color: transparent;
+    
+    ion-label {
+      font-weight: 500;
+      color: var(--ion-color-dark);
+    }
+  }
 }
 
-.estatistica-item {
+// Card do banco de horas
+.bank-hours-card {
+  background: linear-gradient(135deg, #4dd0e1, #26c6da);
+  color: rgb(0, 0, 0);
+  margin-bottom: 14px;
+
+  ion-card-content {
+    padding: 10px 14px;
+  }
+
+  .bank-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+
+    h3 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+  }
+
+  .bank-subtitle {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    opacity: 0.9;
+  }
+
+  .bank-value {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Legenda de status
+.status-legend {
   display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--ion-color-dark);
+    
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 6px;
+      
+      &.processed {
+        background-color: #2d2d2d;
+      }
+      
+      &.to-process {
+        background-color: #f44336;
+      }
+      
+      &.to-send {
+        background-color: #4dd0e1;
+      }
+    }
+  }
 }
 
-.registro-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+// Cards de registro - compactado com estilo mantido
+.registro-card {
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+
+  ion-card-content {
+    padding: 12px 14px;
+  }
+
+  .registro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+
+    .data-info {
+      .data {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--ion-color-dark);
+        margin-bottom: 2px;
+      }
+
+      .dia-semana {
+        font-size: 0.8rem;
+        color: var(--ion-color-medium);
+      }
+    }
+
+    .comprovante-icon {
+      font-size: 1.3rem;
+      color: var(--ion-color-dark);
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+
+  .horas-trabalhadas {
+    font-size: 0.8rem;
+    color: var(--ion-color-dark);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .batidas-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+
+    .batida-item {
+      flex: 1;
+      text-align: center;
+
+      .batida-hora {
+        padding: 4px 2px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--ion-color-dark);
+        min-width: 40px;
+
+        &.batida-vazia {
+          color: var(--ion-color-medium);
+          font-style: italic;
+        }
+      }
+    }
+  }
 }
 
-.registro-info {
-  flex: 1;
-}
 
-.registro-info h3 {
-  margin: 0 0 8px 0;
-  color: var(--ion-color-primary);
-}
-
-.data-hora {
-  margin: 4px 0;
-  color: var(--ion-color-medium);
-  font-size: 14px;
-}
-
-.localizacao {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--ion-color-medium);
-}
-
-.status-sincronizacao {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 8px;
-  font-size: 12px;
-}
-
-.registro-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  margin-left: 16px;
-}
-
+// Mensagem sem registros
 .sem-registros {
   text-align: center;
   padding: 40px 20px;
+  
+  ion-icon {
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+  }
+  
+  p {
+    color: var(--ion-color-medium);
+    margin-bottom: 20px;
+  }
 }
 
-.sem-registros ion-icon {
-  margin-bottom: 16px;
+// Responsividade
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .status-legend {
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    .legend-item {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .registro-header {
+    .data-info .data {
+      font-size: 1rem;
+    }
+    
+    .comprovante-icon {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .batidas-container {
+    gap: 5px;
+    
+    .batida-item .batida-hora {
+      font-size: 0.85rem;
+      padding: 6px 2px;
+      min-width: 45px;
+    }
+  }
 }
 
-.sem-registros h3 {
-  color: var(--ion-color-medium);
-  margin-bottom: 8px;
+// Animações
+.registro-card {
+  animation: slideInUp 0.3s ease-out;
 }
 
-.sem-registros p {
-  color: var(--ion-color-medium);
-  margin-bottom: 24px;
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-

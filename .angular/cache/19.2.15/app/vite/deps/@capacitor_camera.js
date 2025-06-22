@@ -2,7 +2,7 @@ import {
   CapacitorException,
   WebPlugin,
   registerPlugin
-} from "./chunk-HAXYDRAP.js";
+} from "./chunk-D455DCEG.js";
 import {
   __async
 } from "./chunk-FSIFXKME.js";

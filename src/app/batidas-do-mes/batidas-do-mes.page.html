@@ -3,71 +3,82 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Batidas do Mês</ion-title>
+    <ion-title>Histórico de Batidas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="container">
-    <!-- Cabeçalho do Mês -->
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{ mesAtual | titlecase }}</ion-card-title>
-        <ion-card-subtitle>Total de registros: {{ registros.length }}</ion-card-subtitle>
-      </ion-card-header>
+    <!-- Filtro de Mês -->
+    <ion-card class="filter-card">
       <ion-card-content>
-        <div class="estatisticas">
-          <div class="estatistica-item">
-            <ion-icon name="checkmark-circle" color="success"></ion-icon>
-            <span>Sincronizados: {{ obterEstatisticas().sincronizados }}</span>
-          </div>
-          <div class="estatistica-item">
-            <ion-icon name="time" color="warning"></ion-icon>
-            <span>Pendentes: {{ obterEstatisticas().pendentes }}</span>
-          </div>
-        </div>
-        
-        <ion-button expand="block" 
-                    fill="outline" 
-                    (click)="gerarPdfMensal()"
-                    [disabled]="carregandoPdf || registros.length === 0">
-          <ion-icon name="document-text" slot="start"></ion-icon>
-          {{ carregandoPdf ? 'Gerando PDF...' : 'Gerar Relatório PDF' }}
-        </ion-button>
+        <ion-item>
+          <ion-label>Mês/Ano</ion-label>
+          <ion-select [(ngModel)]="mesSelecionado" (ionChange)="filtrarPorMes()">
+            <ion-select-option value="06-2025">Junho 2025</ion-select-option>
+            <ion-select-option value="05-2025">Maio 2025</ion-select-option>
+            <ion-select-option value="04-2025">Abril 2025</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-card-content>
     </ion-card>
 
-    <!-- Lista de Registros -->
-    <div *ngIf="registros.length > 0; else semRegistros">
-      <ion-card *ngFor="let registro of registros; let i = index">
-        <ion-card-content>
-          <div class="registro-item">
-            <div class="registro-info">
-              <h3>{{ getTipoRegistro(registro.tipo) }}</h3>
-              <p class="data-hora">{{ formatarDataHora(registro.dataHora) }}</p>
-              <div class="localizacao" *ngIf="registro.localizacao">
-                <ion-icon name="location" color="medium"></ion-icon>
-                <span>{{ registro.localizacao.latitude | number:'1.6-6' }}, 
-                      {{ registro.localizacao.longitude | number:'1.6-6' }}</span>
-              </div>
-              <div class="status-sincronizacao">
-                <ion-icon [name]="registro.sincronizado ? 'cloud-done' : 'cloud-upload'" 
-                          [color]="registro.sincronizado ? 'success' : 'warning'"></ion-icon>
-                <span>{{ registro.sincronizado ? 'Sincronizado' : 'Pendente' }}</span>
-              </div>
-            </div>
-            <div class="registro-actions">
-              <ion-badge [color]="getCorTipo(registro.tipo)">
-                {{ getTipoRegistro(registro.tipo) }}
-              </ion-badge>
-              <ion-button fill="clear" size="small" (click)="gerarComprovante(registro)">
-                <ion-icon name="document" slot="icon-only"></ion-icon>
-              </ion-button>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
+    <!-- Saldo do Banco de Horas -->
+    <ion-card class="bank-hours-card">
+      <ion-card-content>
+        <div class="bank-header">
+          <h3>Saldo</h3>
+        </div>
+        <div class="bank-subtitle">Banco de horas<br>até 31/05/2025</div>
+        <div class="bank-value">{{ formatarSaldoBancoHoras() }}</div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Legenda de Status -->
+    <div class="status-legend">
+      <div class="legend-item">
+        <div class="status-dot processed"></div>
+        <span>Processadas</span>
+      </div>
+      <div class="legend-item">
+        <div class="status-dot to-process"></div>
+        <span>A Processar</span>
+      </div>
+      <div class="legend-item">
+        <div class="status-dot to-send"></div>
+        <span>A Enviar</span>
+      </div>
     </div>
+
+<!-- Lista de Registros -->
+<div *ngIf="registrosFiltrados.length > 0; else semRegistros">
+  <ion-card *ngFor="let registro of registrosFiltrados" class="registro-card">
+    <ion-card-content>
+      <div class="registro-header">
+        <div class="data-info">
+          <div class="data">{{ formatarData(registro.data) }}</div>
+          <div class="dia-semana">({{ formatarDiaSemana(registro.data) }})</div>
+        </div>
+        <!-- Ícone que abre o menu de ações -->
+        <ion-icon
+          name="receipt-outline"
+          class="comprovante-icon"
+          (click)="abrirOpcoesComprovante(registro)">
+        </ion-icon>
+      </div>
+      <div class="horas-trabalhadas">
+        Horas trabalhadas: {{ formatarHorasTrabalhadas(registro.horasTrabalhadas) }}
+      </div>
+      <div class="batidas-container">
+        <div class="batida-item" *ngFor="let batida of registro.batidas">
+          <span class="batida-hora" [class.batida-vazia]="!batida.hora">
+            {{ batida.hora || '--:--' }}
+          </span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
 
     <!-- Mensagem quando não há registros -->
     <ng-template #semRegistros>
@@ -75,14 +86,9 @@
         <ion-card-content class="sem-registros">
           <ion-icon name="time-outline" size="large" color="medium"></ion-icon>
           <h3>Nenhum registro encontrado</h3>
-          <p>Você ainda não registrou nenhum ponto este mês.</p>
-          <ion-button routerLink="/registrar-ponto" expand="block" fill="outline">
-            <ion-icon name="add" slot="start"></ion-icon>
-            Registrar Primeiro Ponto
-          </ion-button>
+          <p>Não há registros para o período selecionado.</p>
         </ion-card-content>
       </ion-card>
     </ng-template>
   </div>
 </ion-content>
-
