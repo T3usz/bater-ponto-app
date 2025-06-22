@@ -1,8 +1,8 @@
 # Bater Ponto - Aplicativo de Ponto Eletrônico
 
 ![Ionic](https://img.shields.io/badge/Ionic-8.0-blue)
-![Angular](https://img.shields.io/badge/Angular-18.0-red)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Angular](https://img.shields.io/badge/Angular-19.0-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)
 ![Capacitor](https://img.shields.io/badge/Capacitor-7.0-green)
 
 Aplicativo móvel completo para controle de ponto eletrônico com reconhecimento facial, operação offline e geração de relatórios em PDF.
@@ -16,6 +16,7 @@ Aplicativo móvel completo para controle de ponto eletrônico com reconhecimento
 - ✅ **Navegação por Tabs** (Home, Ponto, Folha, RH, Gestor)
 - ✅ **Histórico Completo** de batidas
 - ✅ **Status de Sincronização** em tempo real
+- ✅ **Login com salvamento opcional de CPF**
 
 ## 📱 Páginas Implementadas
 
@@ -38,7 +39,7 @@ Aplicativo móvel completo para controle de ponto eletrônico com reconhecimento
 ## 🛠️ Tecnologias
 
 - **Ionic 8** - Framework híbrido
-- **Angular 18** - Frontend (Standalone Components)
+- **Angular 19** - Frontend (Standalone Components)
 - **Capacitor 7** - Runtime nativo
 - **TypeScript** - Linguagem principal
 - **jsPDF** - Geração de documentos
@@ -130,7 +131,7 @@ src/app/
 2. **Reconhecimento Facial Real**: TensorFlow.js ou ML Kit
 3. **Notificações Push**: Lembretes de ponto
 4. **Relatórios Avançados**: Dashboard analítico
-5. **Autenticação**: Login seguro
+5. **Aprimoramento da Autenticação**: reforço de segurança
 
 ## 📝 Licença
 
