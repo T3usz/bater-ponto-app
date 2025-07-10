@@ -4,6 +4,8 @@
 
 O **Ponto Fácil** é um aplicativo móvel desenvolvido com Ionic + Angular (Standalone) que oferece funcionalidades completas de controle de ponto eletrônico com reconhecimento facial, operação offline e geração de relatórios em PDF.
 
+ℹ️ As credenciais de teste estão disponíveis no arquivo [MANUAL.md](./MANUAL.md).
+
 ## Funcionalidades Principais
 
 ### ✅ Funcionalidades Implementadas
