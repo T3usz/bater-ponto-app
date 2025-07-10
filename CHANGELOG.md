@@ -81,8 +81,8 @@
 - `ACCESS_NETWORK_STATE` - Status da rede
 
 #### Configurações Capacitor
-- App ID: `com.empresa.baterponto`
-- Nome: "Bater Ponto"
+- App ID: `com.empresa.pontofácil`
+- Nome: "Ponto Fácil"
 - Esquema Android: HTTPS
 - Configurações de plugins específicas
 

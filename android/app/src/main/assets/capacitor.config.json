@@ -1,20 +1,27 @@
 {
-	"appId": "com.empresa.baterponto",
-	"appName": "Bater Ponto",
+	"appId": "com.empresa.pontofácil",
+	"appName": "Ponto Fácil",
 	"webDir": "www",
 	"server": {
-		"androidScheme": "https"
+		"androidScheme": "https",
+		"url": "http://192.168.1.106:8100"
 	},
 	"plugins": {
 		"Camera": {
 			"permissions": [
 				"camera",
-				"photos"
+				"photos",
+				"storage"
 			]
 		},
 		"Geolocation": {
 			"permissions": [
 				"location"
+			]
+		},
+		"Filesystem": {
+			"permissions": [
+				"storage"
 			]
 		}
 	}

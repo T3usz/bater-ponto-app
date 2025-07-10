@@ -51,10 +51,11 @@ export class OfflineStorageService {
     if (!localStorage.getItem(this.STORAGE_KEYS.USUARIO)) {
       const usuarioPadrao = {
         nome: 'João Silva',
-        matricula: '12345',
-        cargo: 'Desenvolvedor',
+        matricula: '071757',
+        cargo: 'Desenvolvedor Sênior',
         foto: 'assets/images/user-placeholder.png'
       };
+
       localStorage.setItem(this.STORAGE_KEYS.USUARIO, JSON.stringify(usuarioPadrao));
     }
   }

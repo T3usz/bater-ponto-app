@@ -11,9 +11,20 @@
         <ion-card-title>Folha de Pagamento</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Informações da folha de pagamento serão exibidas aqui.</p>
+        <div class="folha-section">
+          <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+          <p><strong>Matrícula:</strong> {{ usuario.matricula }}</p>
+          <p><strong>Cargo:</strong> {{ usuario.cargo }}</p>
+          <p><strong>Referente a:</strong> Maio/2025</p>
+          <p><strong>Salário Bruto:</strong> R$ 3.200,00</p>
+          <p><strong>Descontos:</strong> R$ 580,00</p>
+          <p><strong>Salário Líquido:</strong> R$ 2.620,00</p>
+        </div>
+
+        <ion-button expand="block" color="danger" (click)="baixarFolhaPDF()">
+          Baixar Folha em PDF
+        </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
-

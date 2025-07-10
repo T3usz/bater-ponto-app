@@ -9,57 +9,149 @@
 
 <ion-content [fullscreen]="true">
   <div class="container">
+
+    <!-- Seção: Dados Pessoais -->
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Informações Pessoais</ion-card-title>
+        <ion-card-title color="danger">Dados Pessoais</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-label>
-              <h3>Nome Completo</h3>
-              <p>{{ usuario.nome }}</p>
-            </ion-label>
+            <ion-label position="stacked">Nome completo</ion-label>
+            <p>{{ usuario.nome }}</p>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Email</h3>
+            <ion-label position="stacked">Email</ion-label>
+            <ng-container *ngIf="!modoEdicao; else emailEdit">
               <p>{{ usuario.email }}</p>
-            </ion-label>
+            </ng-container>
+            <ng-template #emailEdit>
+              <ion-input [(ngModel)]="usuario.email" type="email"></ion-input>
+            </ng-template>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Telefone</h3>
-              <p>{{ usuario.telefone }}</p>
-            </ion-label>
+            <ion-label position="stacked">Cargo</ion-label>
+            <p>{{ usuario.cargo }}</p>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Matrícula</h3>
-              <p>{{ usuario.matricula }}</p>
-            </ion-label>
+            <ion-label position="stacked">Matrícula</ion-label>
+            <p>{{ usuario.matricula }}</p>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Cargo</h3>
-              <p>{{ usuario.cargo }}</p>
-            </ion-label>
+            <ion-label position="stacked">CPF</ion-label>
+            <p>{{ usuario.cpf }}</p>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Departamento</h3>
-              <p>{{ usuario.departamento }}</p>
-            </ion-label>
+            <ion-label position="stacked">RG</ion-label>
+            <p>{{ usuario.rg }}</p>
           </ion-item>
+
           <ion-item>
-            <ion-label>
-              <h3>Data de Admissão</h3>
-              <p>{{ usuario.dataAdmissao | date:'dd/MM/yyyy' }}</p>
-            </ion-label>
+            <ion-label position="stacked">CTPS</ion-label>
+            <p>{{ usuario.ctps }}</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">PIS</ion-label>
+            <p>{{ usuario.pis }}</p>
           </ion-item>
         </ion-list>
       </ion-card-content>
     </ion-card>
+
+    <!-- Seção: Endereço -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title color="danger">Endereço</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Logradouro</ion-label>
+            <ng-container *ngIf="!modoEdicao; else logradouroEdit">
+              <p>{{ usuario.logradouro }}</p>
+            </ng-container>
+            <ng-template #logradouroEdit>
+              <ion-input [(ngModel)]="usuario.logradouro"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Número</ion-label>
+            <ng-container *ngIf="!modoEdicao; else numeroEdit">
+              <p>{{ usuario.numero }}</p>
+            </ng-container>
+            <ng-template #numeroEdit>
+              <ion-input [(ngModel)]="usuario.numero"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Complemento</ion-label>
+            <ng-container *ngIf="!modoEdicao; else complementoEdit">
+              <p>{{ usuario.complemento }}</p>
+            </ng-container>
+            <ng-template #complementoEdit>
+              <ion-input [(ngModel)]="usuario.complemento"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">CEP</ion-label>
+            <ng-container *ngIf="!modoEdicao; else cepEdit">
+              <p>{{ usuario.cep }}</p>
+            </ng-container>
+            <ng-template #cepEdit>
+              <ion-input [(ngModel)]="usuario.cep"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Bairro</ion-label>
+            <ng-container *ngIf="!modoEdicao; else bairroEdit">
+              <p>{{ usuario.bairro }}</p>
+            </ng-container>
+            <ng-template #bairroEdit>
+              <ion-input [(ngModel)]="usuario.bairro"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Estado</ion-label>
+            <ng-container *ngIf="!modoEdicao; else estadoEdit">
+              <p>{{ usuario.estado }}</p>
+            </ng-container>
+            <ng-template #estadoEdit>
+              <ion-input [(ngModel)]="usuario.estado"></ion-input>
+            </ng-template>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Cidade</ion-label>
+            <ng-container *ngIf="!modoEdicao; else cidadeEdit">
+              <p>{{ usuario.cidade }}</p>
+            </ng-container>
+            <ng-template #cidadeEdit>
+              <ion-input [(ngModel)]="usuario.cidade"></ion-input>
+            </ng-template>
+          </ion-item>
+        </ion-list>
+
+        <!-- Botões de ação -->
+        <ion-button expand="block" color="danger" fill="outline" *ngIf="!modoEdicao" (click)="modoEdicao = true">
+          Editar
+        </ion-button>
+
+        <ion-button expand="block" color="danger" *ngIf="modoEdicao" (click)="salvarAlteracoes()">
+          Salvar Alterações
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
-

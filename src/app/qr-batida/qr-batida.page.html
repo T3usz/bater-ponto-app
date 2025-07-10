@@ -3,63 +3,24 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Dados Pessoais</ion-title>
+    <ion-title>Código QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Informações Pessoais</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label>
-              <h3>Nome Completo</h3>
-              <p>{{ usuario.nome }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Email</h3>
-              <p>{{ usuario.email }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Telefone</h3>
-              <p>{{ usuario.telefone }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Matrícula</h3>
-              <p>{{ usuario.matricula }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Cargo</h3>
-              <p>{{ usuario.cargo }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Departamento</h3>
-              <p>{{ usuario.departamento }}</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Data de Admissão</h3>
-              <p>{{ usuario.dataAdmissao | date:'dd/MM/yyyy' }}</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
+  <div class="container" style="text-align: center; padding: 20px">
+    <h2 class="empresa-nome">
+      IFTech Soluções<br>
+      <span class="empresa-subtitulo">Tecnologia e Inovação em Software</span>
+    </h2>
+
+    <canvas #canvas style="margin: 20px auto; display: block;"></canvas>
+
+    <h3 style="margin-top: 10px;">{{ usuario.nome }}</h3>
+    <p>Matrícula: {{ usuario.matricula }}</p>
+
+    <ion-button expand="block" color="danger" (click)="salvarQRCode()">
+      Salvar Código
+    </ion-button>
   </div>
 </ion-content>
-

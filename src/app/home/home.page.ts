@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { OfflineStorageService } from '../services/offline-storage.service'; // ajuste o caminho se necessário
 
 @Component({
   selector: 'app-home',
@@ -15,12 +16,8 @@ export class HomePage implements OnInit {
 
   @ViewChild('inputFoto', { static: false }) inputFoto!: ElementRef;
 
-  usuario = {
-    nome: 'Mateus Silva Lima',
-    matricula: '006004',
-    cargo: 'DESENVOLVEDOR SÊNIOR',
-    foto: 'assets/images/user-placeholder.png'
-  };
+  // Agora os dados vêm do armazenamento centralizado
+  usuario: any = {};
 
   saldoBancoHoras = {
     credito: 8,
@@ -29,9 +26,22 @@ export class HomePage implements OnInit {
     saldo: -238 // Calculado automaticamente
   };
 
-  constructor(private router: Router, private alertCtrl: AlertController) {}
+  constructor(
+    private router: Router,
+    private alertCtrl: AlertController,
+    private offlineStorage: OfflineStorageService
+  ) {}
 
   ngOnInit() {
+    // Obter dados do usuário centralizados
+    this.usuario = this.offlineStorage.obterDadosUsuario() || {};
+
+    // Garantir que a matrícula esteja presente e fixa
+    if (!this.usuario.matricula) {
+      this.usuario.matricula = '071757';
+      this.offlineStorage.salvarDadosUsuario(this.usuario);
+    }
+
     // Calcular saldo automaticamente
     this.calcularSaldoBancoHoras();
   }
@@ -85,6 +95,9 @@ export class HomePage implements OnInit {
       const reader = new FileReader();
       reader.onload = () => {
         this.usuario.foto = reader.result as string;
+
+        // Atualiza o armazenamento com nova foto
+        this.offlineStorage.salvarDadosUsuario(this.usuario);
       };
       reader.readAsDataURL(file);
     }

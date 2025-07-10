@@ -1,5 +1,5 @@
 {
-  "name": "bater-ponto",
+  "name": "ponto-facil",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -34,6 +34,8 @@
     "ionicons": "^7.4.0",
     "jspdf": "^3.0.1",
     "leaflet": "^1.9.4",
+    "pdfmake": "^0.2.20",
+    "qrcode": "^1.5.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -52,6 +54,7 @@
     "@ionic/angular-toolkit": "^12.0.0",
     "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.18",
+    "@types/qrcode": "^1.5.5",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^9.16.0",

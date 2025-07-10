@@ -1,8 +1,8 @@
-# Manual do Aplicativo Bater Ponto
+# Manual do Aplicativo Ponto Fácil
 
 ## Visão Geral
 
-O **Bater Ponto** é um aplicativo móvel desenvolvido com Ionic + Angular (Standalone) que oferece funcionalidades completas de controle de ponto eletrônico com reconhecimento facial, operação offline e geração de relatórios em PDF.
+O **Ponto Fácil** é um aplicativo móvel desenvolvido com Ionic + Angular (Standalone) que oferece funcionalidades completas de controle de ponto eletrônico com reconhecimento facial, operação offline e geração de relatórios em PDF.
 
 ## Funcionalidades Principais
 
@@ -20,7 +20,7 @@ O **Bater Ponto** é um aplicativo móvel desenvolvido com Ionic + Angular (Stan
 
 1. **Home** (`/tabs/home`)
    - Saudação personalizada com dados do usuário
-   - Foto do usuário e informações básicas
+   - Foto do usuário e informações básicas (Ainda será implementado)
    - Saldo de banco de horas (crédito/débito)
    - Menu de navegação rápida
 
@@ -145,8 +145,8 @@ O **Bater Ponto** é um aplicativo móvel desenvolvido com Ionic + Angular (Stan
 
 ```bash
 # Extrair o arquivo do projeto
-unzip bater-ponto.zip
-cd bater-ponto
+unzip ponto-fácil.zip
+cd ponto-fácil
 ```
 
 ### 2. Instalar Dependências
@@ -254,7 +254,7 @@ cd android
 ## Estrutura do Projeto
 
 ```
-bater-ponto/
+ ponto-fácil/
 ├── src/
 │   ├── app/
 │   │   ├── home/                 # Página inicial
@@ -437,8 +437,8 @@ Edite `capacitor.config.ts`:
 
 ```typescript
 const config: CapacitorConfig = {
-  appId: 'com.suaempresa.baterponto',
-  appName: 'Ponto - Sua Empresa',
+  appId: 'com.IFtech.pontofácil',
+  appName: 'Ponto - IFtech',
   // ...
 };
 ```
@@ -486,14 +486,23 @@ console.log(JSON.stringify(dados, null, 2));
 - **Desenvolvedor**: Equipe de Desenvolvimento
 - **Email**: suporte@empresa.com
 - **Versão**: 1.0.0
-- **Data**: Janeiro 2024
+- **Data**: Julho 2025
 
 ### Recursos Adicionais
 - [Documentação Ionic](https://ionicframework.com/docs)
 - [Documentação Angular](https://angular.dev)
 - [Documentação Capacitor](https://capacitorjs.com/docs)
 
+
+## 🔐 Credenciais de Teste
+
+Para testar o login no aplicativo, utilize as credenciais abaixo:
+
+- **CPF**: `123.456.789-00`  
+- **Senha**: `12345678`
+
+> ⚠️ Autenticação simulada: os dados são validados localmente, sem backend real. Ideal apenas para demonstração e testes.
+
 ---
 
 **Nota**: Este aplicativo foi desenvolvido como uma solução completa de ponto eletrônico. Para uso em produção, recomenda-se implementar autenticação robusta, criptografia de dados e integração com sistemas de backend corporativos.
-

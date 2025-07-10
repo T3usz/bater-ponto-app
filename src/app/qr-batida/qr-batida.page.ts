@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
+import { OfflineStorageService } from '../services/offline-storage.service';
+import QRCode from 'qrcode'; // você precisa ter o pacote instalado
 
 @Component({
   selector: 'app-qr-batida',
@@ -12,20 +14,42 @@ import { IonicModule } from '@ionic/angular';
 })
 export class QrBatidaPage implements OnInit {
 
-  usuario = {
-    nome: 'João Silva',
-    email: 'joao.silva@empresa.com',
-    telefone: '(11) 99999-9999',
-    matricula: '037245',
-    cargo: 'Desenvolvedor',
-    departamento: 'TI',
-    dataAdmissao: '2023-01-15'
-  };
+  usuario: any = {};
+  @ViewChild('canvas', { static: false }) canvasRef!: ElementRef;
 
-  constructor() { }
+  constructor(
+    private offlineStorage: OfflineStorageService,
+    private toastCtrl: ToastController
+  ) {}
 
   ngOnInit() {
+    this.usuario = this.offlineStorage.obterDadosUsuario() || {};
+    setTimeout(() => {
+      this.gerarQRCode();
+    }, 300);
   }
 
-}
+  async gerarQRCode() {
+    const canvas = this.canvasRef.nativeElement;
+    const valorQR = `matricula:${this.usuario.matricula}`;
+    await QRCode.toCanvas(canvas, valorQR, { width: 240 });
+  }
 
+  async salvarQRCode() {
+    const canvas = this.canvasRef.nativeElement;
+    const imagem = canvas.toDataURL('image/png');
+
+    const link = document.createElement('a');
+    link.href = imagem;
+    link.download = `qr-${this.usuario.matricula}.png`;
+    link.click();
+
+    const toast = await this.toastCtrl.create({
+      message: 'QR Code salvo com sucesso!',
+      duration: 2000,
+      color: 'success'
+    });
+
+    toast.present();
+  }
+}

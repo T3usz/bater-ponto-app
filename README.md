@@ -1,4 +1,4 @@
-# Bater Ponto - Aplicativo de Ponto Eletrônico
+# Ponto Fácil - Aplicativo de Ponto Eletrônico
 
 ![Ionic](https://img.shields.io/badge/Ionic-8.0-blue)
 ![Angular](https://img.shields.io/badge/Angular-19.0-red)
@@ -49,7 +49,7 @@ Aplicativo móvel completo para controle de ponto eletrônico com reconhecimento
 
 ```bash
 # 1. Extrair projeto
-unzip bater-ponto.zip && cd bater-ponto
+unzip ponto-fácil.zip && cd ponto-fácil
 
 # 2. Instalar dependências
 npm install

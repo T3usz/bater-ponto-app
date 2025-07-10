@@ -229,11 +229,22 @@ ion-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 1.15em;
-  line-height: 1.1; /* aproxima as linhas */
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
+
+.header-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666;
+  margin-top: 2px;
+  letter-spacing: 0.2px;
+  text-transform: none;
+}
+
 
 .header-subtitle {
   font-size: 0.95em;
