@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BackendApiService } from './backend-api.service';
 
 export interface RegistroPonto {
   id: string;
@@ -26,7 +27,7 @@ export class OfflineStorageService {
     SINCRONIZACAO: 'sincronizacao_status'
   };
 
-  constructor() {
+  constructor(private api: BackendApiService) {
     this.inicializarArmazenamento();
   }
 
@@ -212,18 +213,8 @@ export class OfflineStorageService {
   }
 
   private async sincronizarRegistro(registro: RegistroPonto): Promise<void> {
-    // Simular chamada para API
-    // Em produção, substituir por chamada real para o servidor
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Simular sucesso/falha aleatória para demonstração
-        if (Math.random() > 0.2) {
-          resolve();
-        } else {
-          reject(new Error('Falha na sincronização simulada'));
-        }
-      }, 1000);
-    });
+    // Enviar registro para a API real
+    await this.api.enviarRegistro(registro);
   }
 
   // Métodos de Configuração
