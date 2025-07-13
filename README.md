@@ -127,7 +127,7 @@ src/app/
 
 ## 🚀 Próximos Passos
 
-1. **Integração com Backend**: API REST para sincronização
+1. **Integração com Backend**: API REST para sincronização _(iniciado)_
 2. **Reconhecimento Facial Real**: TensorFlow.js ou ML Kit
 3. **Notificações Push**: Lembretes de ponto
 4. **Relatórios Avançados**: Dashboard analítico
